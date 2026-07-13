@@ -20,12 +20,12 @@ detect_provider() {
         return 0
     fi
 
-    if printf '%s\n' "$model_name" | grep -qiE '(^claude-)|(haiku|sonnet|opus)'; then
+    if printf '%s\n' "$model_name" | grep -qiE '(^claude-)|(fable|haiku|sonnet|opus)'; then
         echo "claude"
         return 0
     fi
 
-    echo "Error: Unknown model name '$model_name'. Expected gpt-*/o[N]-* (Codex) or claude-*/haiku/sonnet/opus (Claude)." >&2
+    echo "Error: Unknown model name '$model_name'. Expected gpt-*/o[N]-* (Codex) or claude-*/fable/haiku/sonnet/opus (Claude)." >&2
     return 1
 }
 

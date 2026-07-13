@@ -128,6 +128,23 @@ else
 fi
 
 # ========================================
+# Test 4b: fable routes to claude
+# ========================================
+echo ""
+echo "--- Test 4b: fable routes to claude ---"
+echo ""
+
+result=""
+exit_code=0
+result=$(detect_provider "fable" 2>/dev/null) || exit_code=$?
+
+if [[ $exit_code -eq 0 ]] && [[ "$result" == "claude" ]]; then
+    pass "detect_provider: fable returns claude"
+else
+    fail "detect_provider: fable returns claude" "exit 0 + claude" "exit=$exit_code, output=$result"
+fi
+
+# ========================================
 # Test 5: sonnet routes to claude
 # ========================================
 echo ""

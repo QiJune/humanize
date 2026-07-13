@@ -43,10 +43,10 @@ mkdir -p "$PROJECT_DIR"
 merged=$(XDG_CONFIG_HOME="$TEST_DIR/no-user-config" load_merged_config "$PROJECT_ROOT" "$PROJECT_DIR" 2>/dev/null)
 
 val=$(get_config_value "$merged" "bitlesson_model")
-if [[ "$val" == "haiku" ]]; then
-    pass "default-only: bitlesson_model defaults to haiku"
+if [[ "$val" == "fable" ]]; then
+    pass "default-only: bitlesson_model defaults to fable"
 else
-    fail "default-only: bitlesson_model defaults to haiku" "haiku" "$val"
+    fail "default-only: bitlesson_model defaults to fable" "fable" "$val"
 fi
 
 val=$(get_config_value "$merged" "agent_teams")
@@ -143,10 +143,10 @@ printf '{"bitlesson_model": null}' > "$PROJECT_DIR/.humanize/config.json"
 merged=$(XDG_CONFIG_HOME="$TEST_DIR/no-user-cfg3" load_merged_config "$PROJECT_ROOT" "$PROJECT_DIR" 2>/dev/null)
 
 val=$(get_config_value "$merged" "bitlesson_model")
-if [[ "$val" == "haiku" ]]; then
+if [[ "$val" == "fable" ]]; then
     pass "null strip: null in project config does not override default value"
 else
-    fail "null strip: null in project config does not override default value" "haiku" "$val"
+    fail "null strip: null in project config does not override default value" "fable" "$val"
 fi
 
 # ========================================
@@ -189,11 +189,11 @@ val_g=$(get_config_value "$merged" "gen_plan_mode")
 val_a=$(get_config_value "$merged" "agent_teams")
 val_b=$(get_config_value "$merged" "bitlesson_model")
 
-if [[ "$val_g" == "user-plan-mode" && "$val_a" == "true" && "$val_b" == "haiku" ]]; then
+if [[ "$val_g" == "user-plan-mode" && "$val_a" == "true" && "$val_b" == "fable" ]]; then
     pass "all-layers: gen_plan_mode from user, agent_teams from project, bitlesson_model from default"
 else
     fail "all-layers: all three layers contribute distinct keys" \
-        "user-plan-mode + true + haiku" \
+        "user-plan-mode + true + fable" \
         "$val_g + $val_a + $val_b"
 fi
 

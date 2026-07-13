@@ -507,10 +507,10 @@ echo ""
 echo "PT-7: Agent model specification validation"
 if [[ -f "$RELEVANCE_AGENT" ]]; then
     MODEL=$(awk 'BEGIN{f=0} /^---$/{f++; next} f==1 && /^model:/{sub(/^model:[[:space:]]*/,""); print; exit}' "$RELEVANCE_AGENT")
-    if [[ "$MODEL" == "haiku" ]]; then
-        pass "draft-relevance-checker agent uses haiku model"
+    if [[ "$MODEL" == "fable" ]]; then
+        pass "draft-relevance-checker agent uses fable model"
     else
-        fail "draft-relevance-checker model validation" "haiku" "$MODEL"
+        fail "draft-relevance-checker model validation" "fable" "$MODEL"
     fi
 fi
 
@@ -723,7 +723,7 @@ echo "NT-6: Model specification - invalid model fixtures"
 validate_model_name() {
     local model="$1"
     # Exact match for short aliases
-    [[ "$model" =~ ^(opus|sonnet|haiku)$ ]] || \
+    [[ "$model" =~ ^(opus|sonnet|haiku|fable)$ ]] || \
     # Prefix match for full model IDs
     [[ "$model" =~ ^(claude-|gpt-|o[0-9]|gemini-) ]]
 }
