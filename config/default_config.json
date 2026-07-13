@@ -1,7 +1,7 @@
 {
   "codex_model": "gpt-5.6-sol",
   "codex_effort": "high",
-  "bitlesson_model": "fable",
+  "bitlesson_model": "claude-fable-5",
   "agent_teams": false,
   "alternative_plan_language": "",
   "gen_plan_mode": "discussion"

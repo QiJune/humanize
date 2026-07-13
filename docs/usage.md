@@ -330,7 +330,7 @@ Current built-in keys:
 |-----|---------|-------------|
 | `codex_model` | `gpt-5.6-sol` | Shared default model for Codex-backed review and analysis |
 | `codex_effort` | `high` | Shared default reasoning effort (`xhigh`, `high`, `medium`, `low`) |
-| `bitlesson_model` | `fable` | Model used by the BitLesson selector agent |
+| `bitlesson_model` | `claude-fable-5` | Model used by the BitLesson selector agent |
 | `provider_mode` | unset | Optional runtime mode hint such as `codex-only` |
 | `agent_teams` | `false` | Project-level default for agent teams workflow |
 | `alternative_plan_language` | `""` | Optional translated plan variant language; supported values include `Chinese`, `Korean`, `Japanese`, `Spanish`, `French`, `German`, `Portuguese`, `Russian`, `Arabic`, or ISO codes like `zh` |

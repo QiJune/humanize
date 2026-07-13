@@ -203,7 +203,7 @@ fi
 
 # Load bitlesson model from merged config (controls which CLI bitlesson-select.sh uses)
 DEFAULT_BITLESSON_MODEL="$(get_config_value "$_LOOP_COMMON_CONFIG" "bitlesson_model" 2>/dev/null || true)"
-DEFAULT_BITLESSON_MODEL="${DEFAULT_BITLESSON_MODEL:-fable}"
+DEFAULT_BITLESSON_MODEL="${DEFAULT_BITLESSON_MODEL:-claude-fable-5}"
 
 # Load codex model/effort from merged config so .humanize/config.json can set persistent
 # defaults for all Codex-using features (RLCR, ask-codex).
