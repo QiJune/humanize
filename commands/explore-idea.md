@@ -211,7 +211,7 @@ Dispatch workers in batches that respect `EFFECTIVE_CONCURRENCY` (from Phase 2 v
 
 For each direction in the current batch, launch one `Agent` subagent with:
 - **isolation: "worktree"** — each worker runs in an isolated git worktree
-- **model: "sonnet"** — use the current capable model
+- **model: "fable"** — use the current best model
 - **prompt**: the contents of `<RUN_DIR>/dispatch-prompts/<direction_id>.md`
 
 The agent must create a branch named `explore/<RUN_ID>/<dir_slug>` in its worktree.

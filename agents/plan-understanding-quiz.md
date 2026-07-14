@@ -1,7 +1,7 @@
 ---
 name: plan-understanding-quiz
 description: Analyzes a plan and generates multiple-choice technical comprehension questions to verify user understanding before RLCR loop. Use when validating user readiness for start-rlcr-loop command.
-model: opus
+model: fable
 tools: Read, Glob, Grep
 ---
 

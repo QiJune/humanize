@@ -9,9 +9,9 @@ Before the loop fully exits, please perform a methodology improvement analysis. 
 
 ## Instructions
 
-### 1. Spawn an Opus Agent for Sanitized Analysis
+### 1. Spawn a Fable Agent for Sanitized Analysis
 
-Use the Agent tool with `model: "opus"` to spawn an analysis agent. Give it this task:
+Use the Agent tool with `model: "fable"` to spawn an analysis agent. Give it this task:
 
 **Agent prompt**: Read the development records in `{{LOOP_DIR}}`:
 - All files matching `round-*-summary.md`
